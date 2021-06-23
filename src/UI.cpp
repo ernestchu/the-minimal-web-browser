@@ -167,10 +167,10 @@ void UI::CreateNewTab() {
   if (tab_height < 1)
     tab_height = 1;
   tabs_[id].reset(new Tab(this, id, window->width(), (uint32_t)tab_height, 0, ui_height_));
-  tabs_[id]->view()->LoadURL("file:///new_tab_page.html");
+  tabs_[id]->view()->LoadURL("file:///start-page.html");
 
   Ref<JSContext> lock(view()->LockJSContext());
-  addTab({ id, "New Tab", "", tabs_[id]->view()->is_loading() });
+  addTab({ id, "Start Page", "", tabs_[id]->view()->is_loading() });
 }
 
 RefPtr<View> UI::CreateNewTabForChildView(const String& url) {

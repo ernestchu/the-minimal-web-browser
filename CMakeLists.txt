@@ -83,6 +83,7 @@ set(SOURCES "src/Browser.h"
             "src/main.cpp")
 
 add_executable(${APP_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})
+add_dependencies(WebBrowser CopySDK)
 
 if (APPLE)
   # Enable High-DPI on macOS through our custom Info.plist template
@@ -123,4 +124,3 @@ if (APPLE)
     COMMAND ${CMAKE_COMMAND} -E remove_directory "$<TARGET_FILE_DIR:${APP_NAME}>/resources")
 endif ()
 
-add_dependencies(WebBrowser CopySDK)
